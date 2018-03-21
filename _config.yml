@@ -1,0 +1,15 @@
+baseurl: ""
+url: "/"
+markdown: kramdown
+source: "src"
+destination: "public"
+
+collections:
+  works:
+    output: true
+
+gems:
+  - octopress-paginate
+
+exclude:
+  - node_modules

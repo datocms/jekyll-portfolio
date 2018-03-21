@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="showcase"{% if paginator.next_page_path %} data-next-url="{{ paginator.next_page_path }}"{% endif %}>
+  {% for work in paginator.works %}
+    <div class="showcase__item">
+      <figure class="card">
+        <a href="{{ work.url }}" class="card__image">
+          <img src="{{ work.cover_image }}">
+        </a>
+        <figcaption class="card__caption">
+          <h6 class="card__title">
+            <a href="{{ work.url }}">{{ work.title}}</a>
+          </h6>
+          <div class="card__description">
+            <p>{{ work.excerpt }}</p>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+  {% endfor %}
+</div>

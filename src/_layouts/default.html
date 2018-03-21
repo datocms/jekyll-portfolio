@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ site.data.settings.language }}">
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if jekyll.environment == "production" %}
+      <link rel="stylesheet" href="/assets/all.css">
+    {% endif %}
+    {% for tag in site.data.settings.favicon_meta_tags %}
+      {{ tag | tagify }}
+    {% endfor %}
+    {% if page.seo_meta_tags %}
+      {% for tag in page.seo_meta_tags %}
+        {{ tag | tagify }}
+      {% endfor %}
+    {% endif %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__sidebar">
+        <div class="sidebar">
+          <h6 class="sidebar__title">
+            <a href="/index.html">{{ site.data.settings.name }}</a>
+          </h6>
+
+          <div class="sidebar__intro">
+            {{ site.data.settings.intro | markdownify }}
+          </div>
+
+          <ul class="sidebar__menu">
+            <li{% if page.url == "/"%} class="is-active"{% endif %}>
+              <a href="/">Home</a>
+            </li>
+            <li{% if page.url == "/about.html"%} class="is-active"{% endif %}>
+              <a href="/about.html">About</a>
+            </li>
+          </ul>
+
+          <p class="sidebar__social">
+            {% for profile in site.data.settings.social_profiles %}
+              <a href="{{ profile.url }}" class="social social--{{ profile.type }}"></a>
+            {% endfor %}
+          </p>
+
+          <div class="sidebar__copyright">
+            {{ site.data.settings.copyright }}
+          </div>
+        </div>
+      </div>
+      <div class="container__body">
+        <div class="container__mobile-header">
+          <div class="mobile-header">
+            <div class="mobile-header__menu">
+              <a href="#" data-js="toggleSidebar"></a>
+            </div>
+            <div class="mobile-header__logo">
+              <a href="/index.html">
+                {{ site.data.settings.name }}
+              </a>
+            </div>
+          </div>
+        </div>
+        {{ content }}
+      </div>
+    </div>
+
+    <script src="/assets/all.js"></script>
+    {% if jekyll.environment == "development" %}
+      <script src="http://localhost:5678/livereload.js"></script>
+    {% endif %}
+  </body>
+</html>
