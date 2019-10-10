@@ -24,7 +24,7 @@ create_post "src/index.md" do
   frontmatter :yaml, {
     seo_meta_tags: dato.home.seo_meta_tags,
     layout: 'home',
-    paginate: { collection: 'works', per_page: 5 }
+    pagination: { enabled: true, collection: 'works' }
   }
 end
 
@@ -49,6 +49,7 @@ directory "src/_works" do
     create_post "#{work.slug}.md" do
       frontmatter :yaml, {
         layout: 'work',
+        collection: 'works',
         title: work.title,
         cover_image: work.cover_image.url(w: 450, fm: 'jpg', auto: 'compress'),
         detail_image: work.cover_image.url(w: 600, fm: 'jpg', auto: 'compress'),

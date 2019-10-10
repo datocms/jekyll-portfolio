@@ -1,6 +1,6 @@
 source "https://rubygems.org"
-ruby "2.3.6"
+ruby "2.6.2"
 
 gem "jekyll"
 gem "dato"
-gem "octopress-paginate"
+gem "jekyll-paginate-v2"

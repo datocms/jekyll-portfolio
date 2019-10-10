@@ -1,9 +1,12 @@
 ---
 layout: default
+pagination:
+  enabled: true
+  collection: works
 ---
 
 <div class="showcase"{% if paginator.next_page_path %} data-next-url="{{ paginator.next_page_path }}"{% endif %}>
-  {% for work in paginator.works %}
+  {% for work in paginator.posts %}
     <div class="showcase__item">
       <figure class="card">
         <a href="{{ work.url }}" class="card__image">

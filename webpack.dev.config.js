@@ -1,11 +1,12 @@
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: {
     all: __dirname + '/assets/js/index.js',
   },
   resolve: {
-    root: __dirname + '/assets/js',
+    modules: [path.resolve(__dirname + '/assets/js'), 'node_modules'],
   },
   output: {
     path: __dirname + '/src/assets',
@@ -13,16 +14,27 @@ module.exports = {
     publicPath: '/assets',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /.*\.sass$/,
-        loaders: ['style', 'css', 'sass', 'import-glob']
+        use: [
+          { loader: 'style-loader' },
+          { loader: 'css-loader' },
+          { loader: 'sass-loader' },
+          { loader: 'import-glob-loader' }
+        ]
       },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        loader: 'babel-loader',
-        query: { presets: ['es2015'] }
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        ],
       }
     ]
   },

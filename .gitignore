@@ -1,6 +1,7 @@
 .env
 .jekyll-metadata
 npm-debug.log
+src/.jekyll-cache
 src/_data
 src/_works
 src/about.md
