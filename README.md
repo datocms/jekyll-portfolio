@@ -1,13 +1,17 @@
 # Jekyll Portfolio Website
 
-This repo contains a working static website written with [Jekyll](https://jekyllrb.com), integrated with content coming from this [DatoCMS administrative area](https://dashboard.datocms.com/account/sites/template?name=Portfolio&siteId=604).
+This repo contains a working static website written with [Jekyll](https://jekyllrb.com), integrated with content coming from DatoCMS.
+
+By clicking the following button you'll set up a project on DatoCMS with the schema and data that you need to run this example.
+
+[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/projects/new-from-template/static-website/jekyll-portfolio)
 
 ## Usage
 
 First, install the dependencies of this project:
 
 ```
-yarn install
+yarn install && bundle install
 ```
 
 Add an `.env` file containing the read-only API token of your DatoCMS site:
