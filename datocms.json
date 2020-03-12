@@ -1,6 +1,6 @@
 {
   "name": "Jekyll DatoCMS portfolio",
-  "previewImage": "https://raw.githubusercontent.com/datocms/jekyll-example/master/screenshot.png",
+  "previewImage": "https://raw.githubusercontent.com/datocms/gatsby-portfolio/master/preview.png",
   "templateId": "portfolio",
   "deploymentType": "static",
   "buildCommand": "bundle exec dato dump && bundle exec jekyll build",
