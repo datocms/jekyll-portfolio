@@ -11,8 +11,8 @@
     "start:assets": "NODE_ENV=development webpack --mode development --watch --config webpack.dev.config.js",
     "start:jekyll": "bundle exec jekyll server --incremental",
     "start:livereload": "livereload public -p 5678 -d",
-    "start:datocms": "dato dump --watch",
-    "start": "dato check && concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n jekyll,webpack,livereload,datocms \"yarn start:jekyll\" \"yarn start:assets\" \"yarn start:livereload\" \"yarn start:datocms\""
+    "start:datocms": "bundle exec dato dump --watch",
+    "start": "bundle exec dato check && concurrently -p \"[{name}]\" -c \"blue,red,green,yellow\" -k -n jekyll,webpack,livereload,datocms \"yarn start:jekyll\" \"yarn start:assets\" \"yarn start:livereload\" \"yarn start:datocms\""
   },
   "dependencies": {
     "imagesloaded": "^4.1.1",
