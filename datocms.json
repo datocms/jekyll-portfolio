@@ -7,5 +7,5 @@
   "buildCommand": "npm run build",
   "datocmsApiTokenEnvName": "DATO_API_TOKEN",
   "buildDirectory": "public",
-  "livePreviewUrl": "https://adoring-carson-24f43a.netlify.com/"
+  "livePreviewUrl": "https://demo-datocms-jekyll-portfolio.netlify.com/"
 }
