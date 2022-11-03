@@ -1,3 +1,5 @@
+# ⛔️ DEPRECATED ⛔️
+
 # Jekyll Portfolio Website
 
 This repo contains a working static website written with [Jekyll](https://jekyllrb.com), integrated with content coming from DatoCMS.
